@@ -157,6 +157,11 @@ declare module 'native-base' {
              * To have button with transparent background, include this prop.
              */
             transparent?: boolean,
+
+            full?: boolean,
+
+            light?: boolean,
+            dark?: boolean,
             success?: boolean,
             danger?: boolean,
             warning?: boolean,
@@ -572,6 +577,10 @@ declare module 'native-base' {
             success?: boolean,
             last?:boolean,
         }
+
+        interface StyleProvider {
+            style?: any;
+        }
     }
 
     // Export definitions
@@ -807,4 +816,7 @@ declare module 'native-base' {
      */
     export class Item extends React.Component<NativeBase.Item, any> { }
 
+    export class StyleProvider extends React.Component<NativeBase.StyleProvider, any> { }
+
+    export function connectStyle( name: string, style: any ) : any
 }
